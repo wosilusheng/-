@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-6 21:01:23 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.lusheng.bookcrossing.model.Category" table="category">
+		<id name="cid" type="java.lang.Integer">
+			<column name="cid" />
+			<generator class="identity" />
+		</id>
+		<property name="cname" type="java.lang.String">
+			<column name="cname" length="50" />
+		</property>
+		<many-to-one name="parent"
+			class="com.lusheng.bookcrossing.model.Category">
+			<column name="pid" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

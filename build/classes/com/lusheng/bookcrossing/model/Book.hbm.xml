@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-6 21:08:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lusheng.bookcrossing.model.Book" table="book">
+        <id name="bid" type="java.lang.Integer">
+            <column name="bid" />
+            <generator class="identity" />
+        </id>
+        <property name="bookcrossingId" type="java.lang.String">
+            <column name="bookcrossingId" length="50"/>
+        </property>
+        <property name="bookname" type="java.lang.String">
+            <column name="bookname" length="50"/>
+        </property>
+        <property name="author" type="java.lang.String">
+            <column name="author" length="50" />
+        </property>
+        <property name="imagePath" type="java.lang.String">
+            <column name="imagePath" length="255"/>
+        </property>
+        <property name="press" type="java.lang.String">
+            <column name="press" length="50"/>
+        </property>
+        <property name="publishTime" type="date"  >
+            <column name="publishTime" />
+        </property>
+        <property name="shareTime" type="timestamp">
+            <column name="shareTime" />
+        </property>
+        <many-to-one name="shareUser" class="com.lusheng.bookcrossing.model.User" fetch="join" lazy="false">
+            <column name="suid" />
+        </many-to-one>
+        <many-to-one name="currUser" class="com.lusheng.bookcrossing.model.User" fetch="join" lazy="false">
+            <column name="cuid" />
+        </many-to-one>
+        <many-to-one name="nextUser" class="com.lusheng.bookcrossing.model.User" fetch="join" lazy="false">
+            <column name="nuid" />
+        </many-to-one>
+        <property name="status" type="int">
+            <column name="status" />
+        </property>
+        <property name="nopassReason" type="java.lang.String">
+            <column name="nopassReason" length="255"/>
+        </property>
+        <many-to-one name="category" class="com.lusheng.bookcrossing.model.Category" fetch="join" lazy="false">
+            <column name="cid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

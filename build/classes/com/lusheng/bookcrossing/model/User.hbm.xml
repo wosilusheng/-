@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-6 21:08:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lusheng.bookcrossing.model.User" table="user">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uid" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="username" length="50"/>
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" length="50"/>
+        </property>
+        <property name="emailAddress" type="java.lang.String">
+            <column name="emailAddress" length="50"/>
+        </property>
+        <property name="phoneNumber" type="java.lang.String">
+            <column name="phoneNumber" length="50"/>
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" length="1"/>
+        </property>
+        <property name="signature" type="java.lang.String">
+            <column name="signature" length="100"/>
+        </property>
+        <property name="avatarPath" type="java.lang.String">
+            <column name="avatarPath" length="255"/>
+        </property>
+        <property name="level" type="int">
+            <column name="level" />
+        </property>
+        <property name="points" type="int">
+            <column name="points" />
+        </property>
+        <property name="token" type="java.lang.String">
+            <column name="token" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

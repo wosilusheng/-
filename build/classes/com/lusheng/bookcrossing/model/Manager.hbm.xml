@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-6 21:01:23 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lusheng.bookcrossing.model.Manager" table="manager">
+        <id name="mid" type="java.lang.Integer">
+            <column name="mid" />
+            <generator class="identity" />
+        </id>
+        <property name="accountNumber" type="java.lang.String">
+            <column name="accountNumber" length="50"/>
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>
